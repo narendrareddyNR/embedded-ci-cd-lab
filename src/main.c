@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "gpio.h"
+#include "uart.h"
 
 int main(void)
 {
@@ -7,12 +8,13 @@ int main(void)
     printf("Firmware Version: 1.0\n");
 
     gpio_init();
+    gpio_toggle();
 
-    while (1)
-    {
-        gpio_toggle();
-        break;
-    }
+    uart_init();
+
+    uart_transmit("Hello from Developer B");
+
+    printf("UART TX Count: %u\n", uart_get_tx_count());
 
     return 0;
 }

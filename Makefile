@@ -24,6 +24,8 @@ test: all
 	printf '%s\n' "$$output" | grep -Fq "Embedded CI/CD Lab"; \
 	printf '%s\n' "$$output" | grep -Fq "GPIO initialized"; \
 	printf '%s\n' "$$output" | grep -Fq "GPIO toggled"; \
+	printf '%s\n' "$$output" | grep -Fq "UART TX: Hello from Developer B"; \
+	printf '%s\n' "$$output" | grep -Fq "UART TX Count: 1"; \
 	echo "Firmware smoke tests PASSED"
 
 clean:
