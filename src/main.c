@@ -4,6 +4,7 @@
 int main(void)
 {
     printf("Embedded CI/CD Lab\n");
+    printf("Firmware Version: 1.0\n");
 
     gpio_init();
 
